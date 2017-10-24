@@ -29,7 +29,7 @@ else
     elmax = 75;
 end
 
-fname = sprintf('%s/../../../data/rx_neurons/views/rx_views_%s%s.mat',mfiledir,origfname,str120);
+fname = sprintf('%s/../data/rx_neurons/views/rx_views_%s%s.mat',mfiledir,origfname,str120);
 if exist(fname,'file')
     load(fname);
 elseif ~dogen

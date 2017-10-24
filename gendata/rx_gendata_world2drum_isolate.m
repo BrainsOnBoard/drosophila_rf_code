@@ -1,6 +1,6 @@
 function rx_gendata_world2drum_isolate
     rmax = 500;
-    dname = [mfiledir '/../../../data/arenas'];
+    dname = [mfiledir '/../data/arenas'];
 
     rx_consts;
     for i = 1 %:2

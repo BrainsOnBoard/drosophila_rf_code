@@ -66,7 +66,7 @@ for i = 1:length(fnames)
     
     [px,py] = rx_unwrapworld(fnames{i+(i==2)},d,panoht);
     for j = 1:length(viewtypes)
-        figdatafn = sprintf('%s/../../../data/rx_neurons/figpreprocess/idfs/%s_%s%s.mat',mfiledir,fnames{i},viewtypes{j},str120);
+        figdatafn = sprintf('%s/../data/rx_neurons/figpreprocess/idfs/%s_%s%s.mat',mfiledir,fnames{i},viewtypes{j},str120);
         
         if doload && exist(figdatafn,'file')
             disp([fnames{i} ' - ' viewtypes{j}])

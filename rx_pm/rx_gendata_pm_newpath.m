@@ -23,7 +23,7 @@ try
     %% load variables and set up initial values for agent
     
     load(arenafname,'X','Y','Z');
-    load(sprintf('%s/../../../data/rx_neurons/snaps/rx_pm_snaps_%s_%s.mat',mfiledir,viewtype,arenafname));
+    load(sprintf('%s/../data/rx_neurons/snaps/rx_pm_snaps_%s_%s.mat',mfiledir,viewtype,arenafname));
     
     rx_consts;
     refx = 0;
@@ -85,7 +85,7 @@ try
     flyy(1,:) = sty(startposi);
     flyth(1,:) = 0;
 
-    datafname = sprintf('%s/../../../data/rx_neurons/paths/%s_%s_st%02d_%04dto%04d.mat',mfiledir,arenafname, ...
+    datafname = sprintf('%s/../data/rx_neurons/paths/%s_%s_st%02d_%04dto%04d.mat',mfiledir,arenafname, ...
         viewtype,startposi,whpaths(1),whpaths(end));
     if dosave && exist(datafname,'file')
         error('%s already exists!',datafname)

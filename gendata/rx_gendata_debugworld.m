@@ -29,7 +29,7 @@ axis equal
 subplot(2,1,2)
 imshow(getviewfast(0,0,0,pi/2,X,Y,Z,[]))
 
-fname = fullfile(mfiledir,'../../../data/arenas/debugworld.mat');
+fname = fullfile(mfiledir,'../data/arenas/debugworld.mat');
 if exist(fname,'file')
     error('file already exists')
 else

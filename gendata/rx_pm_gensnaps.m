@@ -28,7 +28,7 @@ function rx_pm_gensnaps(fname)
     thjump = 2*pi/pm.nstartpos;
     [stx,sty] = pol2cart(0:thjump:2*pi-thjump,pm.startrad);
     
-    dname = fullfile(mfiledir,'../../../data/arenas');
+    dname = fullfile(mfiledir,'../data/arenas');
     
     imrot = 2*(0:359);
     xoff = (360-rkernsz(2))/2;
@@ -143,6 +143,6 @@ function savesnaps(viewtype,fn,startims,stx,sty,snaps,snx,sny,vpitch)
         snaps = normalizevals(snaps);
     end
 
-    fname = fullfile(mfiledir,['../../../data/rx_neurons/snaps/rx_pm_snaps_' viewtype '_' fn]);
+    fname = fullfile(mfiledir,['../data/rx_neurons/snaps/rx_pm_snaps_' viewtype '_' fn]);
     savemeta(fname,'-v7.3','startims','stx','sty','snaps','snx','sny','vpitch')
 end

@@ -1,6 +1,6 @@
 function [kernsr2,kernsrx] = rx_gendata_rx_kerns_nothresh_noresize
-% fname = fullfile(mfiledir,'/../../../data/rx_neurons/rx_idf_kerns2.mat');
-fname = fullfile(mfiledir,'/../../../data/rx_neurons/rx_idf_kerns_nothresh_noresize.mat');
+% fname = fullfile(mfiledir,'/../data/rx_neurons/rx_idf_kerns2.mat');
+fname = fullfile(mfiledir,'/../data/rx_neurons/rx_idf_kerns_nothresh_noresize.mat');
 
 if exist(fname,'file')
     load(fname);

@@ -15,7 +15,7 @@ function rx_gendata_world3
     
     rx_consts;
     
-    load([mfiledir '/../../../data/arenas/nest1.mat'],'X','Y');
+    load([mfiledir '/../data/arenas/nest1.mat'],'X','Y');
     rho = hypot(X,Y);
     rpanomax = max(rho(:));
     rtussockmin = d/2;
@@ -76,7 +76,7 @@ function rx_gendata_world3
 
         worldnum = minworldn;
         while true
-            fname = sprintf('%s/../../../data/arenas/artificial%d',mfiledir,worldnum);
+            fname = sprintf('%s/../data/arenas/artificial%d',mfiledir,worldnum);
             if ~exist([fname '.mat'],'file') && ~exist([fname '_drum.mat'],'file')
                 break;
             end

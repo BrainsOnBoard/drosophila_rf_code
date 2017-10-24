@@ -9,8 +9,8 @@ else
     str120 = '';
 end
 
-% fname = fullfile(mfiledir,'/../../../data/rx_neurons/rx_idf_kerns2.mat');
-fname = fullfile(mfiledir,sprintf('/../../../data/rx_neurons/rx_idf_kerns_nothresh%s.mat',str120));
+% fname = fullfile(mfiledir,'/../data/rx_neurons/rx_idf_kerns2.mat');
+fname = fullfile(mfiledir,sprintf('/../data/rx_neurons/rx_idf_kerns_nothresh%s.mat',str120));
 
 if exist(fname,'file')
     load(fname);

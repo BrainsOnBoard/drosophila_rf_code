@@ -1,6 +1,6 @@
 function [rkerns,rkernnum] = rx_gendata_rx_kerns
-% fname = fullfile(mfiledir,'/../../../data/rx_neurons/rx_idf_kerns2.mat');
-fname = fullfile(mfiledir,'/../../../data/rx_neurons/rx_idf_kerns.mat');
+% fname = fullfile(mfiledir,'/../data/rx_neurons/rx_idf_kerns2.mat');
+fname = fullfile(mfiledir,'/../data/rx_neurons/rx_idf_kerns.mat');
 
 if exist(fname,'file')
     load(fname);

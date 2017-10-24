@@ -2,7 +2,7 @@ clear
 
 dosave = true;
 
-load([mfiledir '/../../../data/arenas/artificial2.mat'],'X','Y','Z');
+load([mfiledir '/../data/arenas/artificial2.mat'],'X','Y','Z');
 
 rx_consts;
 rtussockmin = d/2;

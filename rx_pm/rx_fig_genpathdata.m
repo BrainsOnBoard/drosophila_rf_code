@@ -1,5 +1,5 @@
 function rx_fig_genpathdata(fname,viewtype)
-figdatafn = sprintf('%s/../../../data/rx_neurons/figpreprocess/paths/paths_%s.mat_%s.mat', ...
+figdatafn = sprintf('%s/../data/rx_neurons/figpreprocess/paths/paths_%s.mat_%s.mat', ...
     mfiledir,fname,viewtype);
 if exist(figdatafn,'file')
     disp('data file already exists!')

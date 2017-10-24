@@ -27,7 +27,7 @@ dcm = 100*d;
 % xyt = [-6 0 6];
 % xyl = (panoht+(dcm/2))*[-1 1];
 
-dname = fullfile(mfiledir,'../../../data/rx_neurons/paths');
+dname = fullfile(mfiledir,'../data/rx_neurons/paths');
 
 shortestpath = pm.startrad-pm.coold/2;
 
@@ -36,7 +36,7 @@ shortestpath = pm.startrad-pm.coold/2;
 cmperin = 2.54;
 rtnviews = round(picwd*picdpi/cmperin);
 
-snd = [mfiledir '/../../../data/rx_neurons/snaps/'];
+snd = [mfiledir '/../data/rx_neurons/snaps/'];
 dfiles = dir(fullfile(snd,'*.mat'));
 load(fullfile(snd,dfiles(1).name),'snx','sny');
 imvals = linspace(-dcm/2,dcm/2,rtnviews);
@@ -54,7 +54,7 @@ for i = 1:length(fnames)
 %         unwrappedy = -unwrappedy;
 %     end
     for j = 1:length(viewtypes)
-        figdatafn = sprintf('%s/../../../data/rx_neurons/figpreprocess/paths/paths_%s.mat_%s.mat',mfiledir,fnames{i},viewtypes{j});
+        figdatafn = sprintf('%s/../data/rx_neurons/figpreprocess/paths/paths_%s.mat_%s.mat',mfiledir,fnames{i},viewtypes{j});
         if 0 %doload && exist(figdatafn,'file')
             load(figdatafn,'totim','tty','madeits','nfile');
         else

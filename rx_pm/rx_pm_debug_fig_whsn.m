@@ -16,7 +16,7 @@ xyst = xyjump:xyjump:pm.reflen;
 
 cols = [1 0 0; 0 0 1; 0 1 0; 1 1 0];
 
-dname = fullfile(mfiledir,'../../../data/rx_neurons/paths');
+dname = fullfile(mfiledir,'../data/rx_neurons/paths');
 % files = dir([datadir '*.mat']);
 
 rtnviews = round(2*sqrt(npixapprox/pi));
@@ -94,7 +94,7 @@ for i = 1:length(arenas)
 %         tots = shiftdim(sum(sum(mwhsn)));
 %         bar(tots)
 % 
-%         load(sprintf('%s/../../../data/rx_neurons/snaps/rx_pm_snaps_%s_%s',mfiledir,viewtypes{j},arenas{i}),'snaps')
+%         load(sprintf('%s/../data/rx_neurons/snaps/rx_pm_snaps_%s_%s',mfiledir,viewtypes{j},arenas{i}),'snaps')
 %         figure(7);clf
 %         csnaps = snaps(:,:,:,1);
 %         csnaps = bsxfun(@rdivide,bsxfun(@minus,csnaps,min(csnaps)),range(csnaps));
