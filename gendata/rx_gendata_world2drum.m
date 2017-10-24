@@ -1,4 +1,4 @@
-function rx_gendata_world2drum_isolate
+function rx_gendata_world2drum
 % wraps the real mapped world onto the inside of a drum
 
     rmax = 500;
