@@ -1,4 +1,6 @@
 function rx_fig_methods_nestworld(dosave)
+% shows a top-down view of the natural 3D world
+
 if ~nargin
     dosave = false;
 end

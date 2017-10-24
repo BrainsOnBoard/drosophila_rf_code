@@ -1,4 +1,6 @@
 function rx_fig_methods_panorama_r2(dosave)
+% shows a panoramic view with RFs overlaid
+
     if ~nargin
         dosave = false;
     end
