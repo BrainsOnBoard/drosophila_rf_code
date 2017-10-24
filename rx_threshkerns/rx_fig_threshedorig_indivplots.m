@@ -12,7 +12,7 @@ ext = 'pdf';
 
 % show stuff
 figure(1);clf
-showkernel(kern(1),[],xrng,yrng);
+showkernels(kern(1),[],1,xrng,yrng);
 axis equal tight off
 set(gca,'box','off');
 if dosave
@@ -51,7 +51,7 @@ if dosave
 end
 
 figure(5);clf
-showkernel(centerkernson(avkern,ac),[],xrng,yrng);
+showkernels(centerkernson(avkern,ac),[],1,xrng,yrng);
 axis equal tight off
 set(gca,'box','off');
 if dosave
