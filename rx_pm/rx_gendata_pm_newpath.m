@@ -172,7 +172,7 @@ try
         runtime = toc(tottimer);
         if dosave
             nargs = nargin; %flyx,flyy,flyth,flystep,thnoise,qmatch,whsn
-            savemeta(datafname,'flyx','flyy','flyth','thnoise','whsn','walkdist', ...
+            save(datafname,'flyx','flyy','flyth','thnoise','whsn','walkdist', ...
                                'madeit','nsteps','pm','runtime', ...
                                'randseed','doscalesteplen','nargs','wallhits');
         else
@@ -188,7 +188,7 @@ try
 catch joberror
     runtime = toc(tottimer);
     if dosave && ~isempty(jobid)
-        savemeta(['../ERROR_' jobid]);
+        save(['../ERROR_' jobid]);
     else
         dump2base;
     end

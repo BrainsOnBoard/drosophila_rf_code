@@ -60,7 +60,7 @@ else
         end
     end
     
-    savemeta(fname,'views','xg','yg','vpitch');
+    save(fname,'views','xg','yg','vpitch');
 end
 
 if ~exist('lr_views','var')

@@ -144,5 +144,5 @@ function savesnaps(viewtype,fn,startims,stx,sty,snaps,snx,sny,vpitch)
     end
 
     fname = fullfile(mfiledir,['../data/rx_neurons/snaps/rx_pm_snaps_' viewtype '_' fn]);
-    savemeta(fname,'-v7.3','startims','stx','sty','snaps','snx','sny','vpitch')
+    save(fname,'-v7.3','startims','stx','sty','snaps','snx','sny','vpitch')
 end

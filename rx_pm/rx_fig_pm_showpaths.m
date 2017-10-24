@@ -136,7 +136,7 @@ for i = 1:length(fnames)
 
             if nfile==pm.nstartpos
                 if doload
-                    savemeta(figdatafn,'totim','tty','madeits','nfile');
+                    save(figdatafn,'totim','tty','madeits','nfile');
                 end
             else
                 warning('only %d files for %s:%s',nfile,fnames{i},viewtypes{j});

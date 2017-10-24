@@ -33,5 +33,5 @@ fname = fullfile(mfiledir,'../data/arenas/debugworld.mat');
 if exist(fname,'file')
     error('file already exists')
 else
-    savemeta(fname,'X','Y','Z');
+    save(fname,'X','Y','Z');
 end
