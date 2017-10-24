@@ -11,7 +11,7 @@ rx_consts;
 for i = 1:length(fnames)
     for j = 1:length(viewtypes)
         for k = 1:nstartpos
-            rx_gendata_pm_newpath(fnames{i},viewtypes{j},k,1:npaths);
+            rx_gendata_newpath(fnames{i},viewtypes{j},k,1:npaths);
         end
     end
 end

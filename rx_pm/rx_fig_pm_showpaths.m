@@ -1,4 +1,6 @@
 function rx_fig_pm_showpaths(dosave)
+% show paths for each arena/condition
+
 if ~nargin
     dosave = false;
 end

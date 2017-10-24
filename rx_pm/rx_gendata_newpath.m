@@ -1,4 +1,4 @@
-function rx_gendata_pm_newpath(arenafname,viewtype,startposi,whpaths,randseed)
+function rx_gendata_newpath(arenafname,viewtype,startposi,whpaths,randseed)
 dosave = logical(nargin);
 nsnapstoweight = 1;
 
