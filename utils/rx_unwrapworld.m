@@ -3,7 +3,7 @@ function [px,py] = rx_unwrapworld(fname,d,panoht)
     
     thgap = 2*pi/npt;
 
-    load(sprintf('%s/data/arenas/%s.mat',mfiledir,fname),'X','Y','Z');
+    load(sprintf('%s/../data/arenas/%s.mat',mfiledir,fname),'X','Y','Z');
     [th,phi] = cart2sph(X,Y,Z);
     th = mod(th,2*pi);
     if size(th,2)>1

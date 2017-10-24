@@ -143,6 +143,10 @@ function savesnaps(viewtype,fn,startims,stx,sty,snaps,snx,sny,vpitch)
         snaps = normalizevals(snaps);
     end
 
-    fname = fullfile(mfiledir,['../data/rx_neurons/snaps/rx_pm_snaps_' viewtype '_' fn]);
+    dname = fullfile(mfiledir,'../data/rx_neurons/snaps');
+    if ~exist(dname,'dir')
+        mkdir(dname)
+    end
+    fname = fullfile(dname,['rx_pm_snaps_' viewtype '_' fn]);
     save(fname,'-v7.3','startims','stx','sty','snaps','snx','sny','vpitch')
 end

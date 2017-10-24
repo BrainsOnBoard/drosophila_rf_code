@@ -40,6 +40,10 @@ snd = [mfiledir '/../data/rx_neurons/snaps/'];
 dfiles = dir(fullfile(snd,'*.mat'));
 load(fullfile(snd,dfiles(1).name),'snx','sny');
 imvals = linspace(-dcm/2,dcm/2,rtnviews);
+figdname = fullfile(mfiledir,'../data/figpreprocess/paths');
+if ~exist(figdname,'dir')
+    mkdir(figdname)
+end
 for i = 1:length(fnames)
     if mod(i-1,arenasperfig)==0
         figure(2);clf
@@ -51,7 +55,7 @@ for i = 1:length(fnames)
         unwrappedy = -unwrappedy;
     end
     for j = 1:length(viewtypes)
-        figdatafn = sprintf('%s/../data/rx_neurons/figpreprocess/paths/paths_%s.mat_%s.mat',mfiledir,fnames{i},viewtypes{j});
+        figdatafn = fullfile(figdname,sprintf('paths_%s.mat_%s.mat',fnames{i},viewtypes{j}));
         if doload && exist(figdatafn,'file')
             load(figdatafn,'totim','tty','madeits','nfile');
         else
@@ -61,30 +65,30 @@ for i = 1:length(fnames)
             nfile = 0;
             if doprogbar
                 startprogbar(10,pm.nstartpos,[fnames{i} ' - ' viewtypes{j}],true);
-%             else
-%                 disp([arenas{i} ' - ' viewtypes{j}])
+                %             else
+                %                 disp([arenas{i} ' - ' viewtypes{j}])
             end
             for k = 1:pm.nstartpos
                 fname = sprintf('%s/%s_%s_st%02d_%04dto*.mat',dname,fnames{i}, ...
-                                viewtypes{j},k,1);
+                    viewtypes{j},k,1);
                 cfs = dir(fname);
                 if length(cfs) > 1
-                        error('too many files!')
+                    error('too many files!')
                 elseif length(cfs)==1
                     nfile = nfile+1;
-
+                    
                     load([dname '/' cfs(1).name],'flyx','flyy','walkdist','madeit');
-
-%                     mx = min(npathmax,size(flyx,1));
-
+                    
+                    %                     mx = min(npathmax,size(flyx,1));
+                    
                     madeits(k)=mean(madeit);
                     tty(k) = mean(walkdist(madeit))/shortestpath-1;
                     if tty(k)<0
                         error('negative tortuosity')
                     end
-
+                    
                     ccol = 1+mod(k-1,size(linecols,1));
-
+                    
                     flyx = 1+round((rtnviews-1)*(0.5+flyx./d));
                     flyy = 1+round((rtnviews-1)*(0.5+flyy./d));
                     dy = diff(flyy);
@@ -92,13 +96,13 @@ for i = 1:length(fnames)
                     dx = diff(flyx);
                     sgnx = sign(dx);
                     derr = abs(dy./dx);
-
+                    
                     for l = 1:size(flyx,2)
                         for m = 1:size(dy,1)
                             if isnan(dy(m,l))
                                 continue;
                             end
-
+                            
                             if dy(m,l)==0 % horizontal line or single pixel
                                 if sgnx(m,l)==0
                                     cind = sub2ind(size(totim),flyy(m,l),flyx(m,l),ccol);
@@ -123,7 +127,7 @@ for i = 1:length(fnames)
                                     end
                                 end
                             end
-
+                            
                             totim(cind) = totim(cind)+1;
                         end
                     end
@@ -133,7 +137,7 @@ for i = 1:length(fnames)
                     return
                 end
             end
-
+            
             if nfile==pm.nstartpos
                 if doload
                     save(figdatafn,'totim','tty','madeits','nfile');
@@ -178,7 +182,7 @@ for i = 1:length(fnames)
             ylabel(viewtypes{j})
             set(gca,'YTick',xyt);
         else
-           set(gca,'YTick',[]);
+            set(gca,'YTick',[]);
         end
         
         xlim(xyl)
