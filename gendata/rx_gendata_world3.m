@@ -1,4 +1,6 @@
 function rx_gendata_world3
+% generate a new artificial world (not used in paper)
+
     dosave = false;
     
     minworldn = 19;

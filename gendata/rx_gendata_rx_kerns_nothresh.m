@@ -1,4 +1,6 @@
 function [rkerns,rkernnum] = rx_gendata_rx_kerns_nothresh(do120,myrkernsz)
+% returns the set of Rx kernels; if they don't exist they are generated
+
 if nargin < 1
     do120 = false;
 end

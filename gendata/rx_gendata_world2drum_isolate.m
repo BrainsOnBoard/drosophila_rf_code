@@ -1,4 +1,6 @@
 function rx_gendata_world2drum_isolate
+% wraps the real mapped world onto the inside of a drum
+
     rmax = 500;
     dname = [mfiledir '/../data/arenas'];
 
@@ -54,9 +56,8 @@ function savewithdrum(origfname,fname,X,Y,Z,d,ht)
     imshow(v2);
     figure(2);clf;fill(X',Y','k');hold on;plot(0,0,'r+')
     figure(3);clf
-    showWorld(X,Y,Z)
-    keyboard
-    
+    showWorld(X,Y,Z);
+
     function normZ
         %norm Z
         hypotxy = hypot(X,Y);
