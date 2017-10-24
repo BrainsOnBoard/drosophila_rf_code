@@ -15,7 +15,7 @@ function writekerns(str,ks,cm)
     wd = ceil(size(ks,3)./4);
     for i = 1:size(ks,3)/2
         im = stretchkern(ks(:,:,i));
-        fname = sprintf('%s/../../../figures/drosneur/rx_neurons/rx_threshkerns/%s_%02d.png',mfiledir,str,i);
+        fname = sprintf('%s/../figures/rx_threshkerns/%s_%02d.png',mfiledir,str,i);
         imwrite(uint8(round(im)),cm,fname);
         
         subplot(2,wd,i)

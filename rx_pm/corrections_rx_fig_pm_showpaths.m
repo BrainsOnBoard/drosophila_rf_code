@@ -5,7 +5,7 @@ function corrections_rx_fig_pm_showpaths(dosave)
 
 picwd = 3; % cm
 picdpi = 600;
-picdir = [mfiledir '/../../../figures/drosneur/rx_neurons/rx_pm/pathpics'];
+picdir = [mfiledir '/../figures/rx_pm/pathpics'];
 
 if ~exist(picdir,'dir')
     mkdir(picdir)

@@ -47,7 +47,7 @@ function rx_fig_methods_panorama_r2(dosave)
     imshow(comboim)
     
     if dosave
-        dname = fullfile(mfiledir,'../../../figures/drosneur/rx_neurons/rx_methods');
+        dname = fullfile(mfiledir,'../figures/rx_methods');
 %         if ~exist(dname,'dir')
 %             mkdir(dname)
 %         end
