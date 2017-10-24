@@ -30,5 +30,5 @@ set(gca,'CameraPosition',[0.590774 -1.06578 0.367823]);
 axis equal off
 
 if dosave
-    savefig('rx_fig_methods_3d_arena',[15 15])
+    alsavefig('rx_fig_methods_3d_arena',[15 15])
 end

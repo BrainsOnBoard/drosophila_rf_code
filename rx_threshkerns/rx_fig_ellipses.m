@@ -13,7 +13,7 @@ function rx_fig_ellipses(dosave)
     kells(kernsrx,'Rx',1,dosave)
     
     if dosave
-        savefig('RF_ellipses')
+        alsavefig('RF_ellipses')
     end
 end
 

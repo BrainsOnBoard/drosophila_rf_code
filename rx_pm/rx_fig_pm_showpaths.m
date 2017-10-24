@@ -198,7 +198,7 @@ for i = 1:length(fnames)
     end
     
     if dosave && (i==length(fnames) || mod(i,arenasperfig)==0)
-        savefig('rx_pm_showpaths',[5*arenasperfig 20])
+        alsavefig('rx_pm_showpaths',[5*arenasperfig 20])
     end
 end
 

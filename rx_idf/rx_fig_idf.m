@@ -215,9 +215,9 @@ for i = 1:length(fnames)
     
     if dosave
         if doplotallrots
-            savefig(['rx_fig_allrots_' fnames{i}],[nrots*5 length(viewtypes)*4]);
+            alsavefig(['rx_fig_allrots_' fnames{i}],[nrots*5 length(viewtypes)*4]);
         elseif (i==length(fnames) || mod(i,arenasperfig)==0)
-            savefig('rx_fig_idfs',[arenasperfig*5 length(viewtypes)*4]);
+            alsavefig('rx_fig_idfs',[arenasperfig*5 length(viewtypes)*4]);
         end
     end
 end

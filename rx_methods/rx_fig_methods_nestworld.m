@@ -59,5 +59,5 @@ set(gca,'XTick',-20:10:30,'YTick',-20:10:40)
 andy_setbox
 
 if dosave
-    savefig('rx_arena_nest',[6 6])
+    alsavefig('rx_arena_nest',[6 6])
 end

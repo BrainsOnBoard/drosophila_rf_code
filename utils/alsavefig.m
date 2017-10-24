@@ -1,6 +1,6 @@
-function cnt=savefig(ofname,sz,ext,type,r)
+function cnt=alsavefig(ofname,sz,ext,type,r)
 global LASTFIGS
-% function savefig(fname,sz,ext,type)
+% function alsavefig(fname,sz,ext,type)
 % global verbose
 if nargin < 5
     r = 300;

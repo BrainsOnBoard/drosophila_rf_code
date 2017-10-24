@@ -58,7 +58,7 @@ function rx_fig_methods_panorama_r2(dosave)
         xlim([1 size(pano,2)])
         ylim([1 size(pano,1)])
         set(gca,'YDir','reverse','XTick',[],'YTick',[])
-        savefig('rx_fig_methods_panorama_r2_crosses',8*[1 size(pano,1)/size(pano,2)])
+        alsavefig('rx_fig_methods_panorama_r2_crosses',8*[1 size(pano,1)/size(pano,2)])
 
         fnum = 1;
         while true

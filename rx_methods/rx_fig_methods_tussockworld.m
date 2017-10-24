@@ -22,5 +22,5 @@ ylim(lm)
 xlim(lm)
 
 if dosave
-    savefig('rx_fig_methods_tussockworld',[12 6])
+    alsavefig('rx_fig_methods_tussockworld',[12 6])
 end

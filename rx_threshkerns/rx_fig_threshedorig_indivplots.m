@@ -16,7 +16,7 @@ showkernel(kern(1),[],xrng,yrng);
 axis equal tight off
 set(gca,'box','off');
 if dosave
-    savefig('threshkern',sz,ext,ftype)
+    alsavefig('threshkern',sz,ext,ftype)
 end
 
 figure(2);clf
@@ -28,7 +28,7 @@ hold off
 axis equal tight off
 set(gca,'box','off');
 if dosave
-    savefig('layer2',sz,ext,ftype)
+    alsavefig('layer2',sz,ext,ftype)
 end
 
 figure(3);clf
@@ -37,7 +37,7 @@ showkernels(ckern,[],kalpha,xrng,yrng);
 axis equal tight off
 set(gca,'box','off');
 if dosave
-    savefig('centre2',sz,ext,ftype)
+    alsavefig('centre2',sz,ext,ftype)
 end
 
 figure(4);clf
@@ -47,7 +47,7 @@ showkernels(ckerns,[],kalpha,xrng,yrng);
 axis equal tight off
 set(gca,'box','off');
 if dosave
-    savefig('layerall',sz,ext,ftype)
+    alsavefig('layerall',sz,ext,ftype)
 end
 
 figure(5);clf
@@ -55,7 +55,7 @@ showkernel(centerkernson(avkern,ac),[],xrng,yrng);
 axis equal tight off
 set(gca,'box','off');
 if dosave
-    savefig('centreall',sz,ext,ftype);
+    alsavefig('centreall',sz,ext,ftype);
 end
 
 figure(6);clf
@@ -64,6 +64,6 @@ image(xrng,yrng,im);
 axis equal tight off
 set(gca,'box','off');
 if dosave
-    savefig('origkern',sz,ext,ftype)
+    alsavefig('origkern',sz,ext,ftype)
     close all
 end
