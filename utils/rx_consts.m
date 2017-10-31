@@ -1,20 +1,3 @@
-% fnames = { 'debugworld.mat' }; %'nest1_drum.mat', 'nest1.mat', ...'ofstad_etal_arena.mat',
-% %            'nest2_drum.mat', 'nest2.mat', ...
-% %            'artificial1_drum.mat', 'artificial1.mat', ...
-% %            'artificial2_drum.mat', 'artificial2.mat' };
-% % fnames = {};           
-% % %            'artificial2_drum.mat', 'artificial2.mat' };
-% % %            'nest2_drum.mat', 'nest2.mat', ...
-% % %            'nest1_dist_drum.mat', 'nest1_dist.mat', ...
-% % %            'nest2_dist_drum.mat', 'nest2_dist.mat', ...
-% % %            
-% for fni = 14:16
-%     st = sprintf('artificial%d',fni);
-%     fnames = [ fnames, {[st '_drum.mat'], [st '.mat']} ];
-% end
-% clear fni st
-
-% fnames = { 'ofstad_etal_arena' };
 fid = fopen('wharenas.txt','r');
 fnames = textscan(fid,'%s\n');
 fnames = fnames{:};
