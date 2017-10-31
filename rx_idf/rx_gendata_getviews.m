@@ -29,7 +29,8 @@ else
     elmax = 75;
 end
 
-fname = sprintf('%s/../data/rx_neurons/views/rx_views_%s%s.mat',mfiledir,origfname,str120);
+dname = fullfile(mfiledir,'../data/rx_neurons/views');
+fname = fullfile(dname,sprintf('rx_views_%s%s.mat',origfname,str120));
 if exist(fname,'file')
     load(fname);
 elseif ~dogen
@@ -60,6 +61,9 @@ else
         end
     end
     
+    if ~exist(dname,'dir')
+        mkdir(dname)
+    end
     save(fname,'views','xg','yg','vpitch');
 end
 
