@@ -1,4 +1,4 @@
-function rx_showkerns
+function rx_fig_showkerns
 
 load('vf_kernels_nothresh')
 
