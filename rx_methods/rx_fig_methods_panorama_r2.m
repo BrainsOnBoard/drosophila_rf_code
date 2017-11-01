@@ -7,27 +7,33 @@ function rx_fig_methods_panorama_r2(dosave)
     
     crosscol = 0;
     crosslen = 31;
-    palpha = .5;
-    kalpha = .9;
-    hfov = 270;
+    panoalpha = .5; % transparency of panorama im
+    kernalpha = .9; % transparency of overlaid kernels
+    hfov = 270; % horizontal field of view
+    elmax = 70; % maximum elevation
+    elup = elmax/5;
+    
+    % position and pose
     x = -10.7770;
     y = 2.7356;
-    elmax = 70;
-    elup = elmax/5;
     th = pi;
     
     crossoff = floor(crosslen/2);
     crossi = -crossoff:crossoff;
     
+    % load kernels and colour map
     load('vf_kernels_nothresh.mat','vf_avkernels_r2','neuroncolormap');
     kerns = vf_avkernels_r2;
+    
+    % colour for excitation/inhibition
+    excol = neuroncolormap(end,:);
+    incol = neuroncolormap(1,:);
+    
+    % load world and get view
     load('XYZ_nid1_training.mat','X','Y','Z');
     pano = getviewfast_20140312(x,y,0,th,X(1:end-2,:),Y(1:end-2,:),Z(1:end-2,:),[],elmax);
     pixup = round(size(pano,1)*(elup/elmax));
     pano = [pano(pixup+1:end,:);false(pixup,size(pano,2))];
-    
-    excol = neuroncolormap(end,:);
-    incol = neuroncolormap(1,:);
     
     ksz = size(vf_avkernels_r2(1).k);
     rsz = [size(pano,1),size(pano,2)*(hfov/360)];
@@ -44,7 +50,7 @@ function rx_fig_methods_panorama_r2(dosave)
     rkerns = resizekernel(kerns,rsz,0.25);
     exim = makekim(rkerns>0,excol);
     inim = makekim(rkerns<0,incol);
-    comboim = imageadd(pano,'alpha',palpha,inim,exim); %,crossim);
+    comboim = imageadd(pano,'alpha',panoalpha,inim,exim);
     figure(2);clf
     imshow(comboim)
     
@@ -78,6 +84,6 @@ function rx_fig_methods_panorama_r2(dosave)
         calpha = sum(sel,3);
         calpha = calpha./max(calpha(:));
         kim = repmat(shiftdim([imcol,0],-1),size(pano));
-        kim(:,floor(xdiff)+1:size(pano,2)-ceil(xdiff),4) = kalpha*calpha;
+        kim(:,floor(xdiff)+1:size(pano,2)-ceil(xdiff),4) = kernalpha*calpha;
     end
 end
