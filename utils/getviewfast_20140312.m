@@ -1,4 +1,5 @@
-function im=getviewfast(x,y,z,th,X,Y,Z,av_area,el_max,orig_im_size)
+function im=getviewfast_20140312(x,y,z,th,X,Y,Z,av_area,el_max,orig_im_size)
+% get a view in a world at a given position (old version)
 
 if nargin < 10 
     orig_im_size = [170 900];

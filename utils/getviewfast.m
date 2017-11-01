@@ -1,6 +1,5 @@
 function im=getviewfast(x,y,z,th,X,Y,Z,im_size,el_max,orig_im_size,pitch)
-% function im=getviewfast(x,y,z,th,X,Y,Z,av_area,el_max,orig_im_size,pitch)
-%     minshapesize = 1;
+% get a view in a world at a given position
 
     if nargin < 10 || isempty(orig_im_size)
         orig_im_size = [170 900];

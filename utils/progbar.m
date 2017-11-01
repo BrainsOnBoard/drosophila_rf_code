@@ -1,4 +1,6 @@
 function killed=progbar(newtxt)
+% show a progress bar
+
 global PB_LOOP PB_INT PB_COUNT PB_WB_H PB_WB_STR
 killed = false;
 

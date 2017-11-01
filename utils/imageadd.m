@@ -1,4 +1,9 @@
 function outim = imageadd(varargin)
+% layer images on top of one another with specified transparency
+% transparency can be specified in three ways:
+% - NaNs are treated as transparent pixels
+% - alpha param sets transparency for a whole image
+% - 4D matrices are treated as RGBa images
 
 outim = ones(size(varargin{1},1),size(varargin{1},2),3);
 c = 1;

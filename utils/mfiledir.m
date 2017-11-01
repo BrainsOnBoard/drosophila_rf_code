@@ -1,4 +1,6 @@
 function mfd = mfiledir
+% returns the dir the current function is executing in
+
 mfd = fileparts(evalin('caller','mfilename(''path'')'));
 if isempty(mfd)
     d = dbstack;

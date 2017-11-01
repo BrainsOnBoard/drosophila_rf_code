@@ -1,5 +1,8 @@
 function rkern = resizekernel_nothresh(kern,szfac)
-% function rkern = resizekernel(kern,szfac,thresh)
+% resizes one or more kernels
+% the function can take a kernel struct or array
+
+% convert any kernel data type to a cell array
 if isstruct(kern)
     if length(kern)==1
         kernstr = kern;
@@ -21,13 +24,12 @@ for i = 1:size(rkern,3)
     ck(pos) = ck(pos)./sum(ck(pos));
     neg = ck<0;
     ck(neg) = -ck(neg)./sum(ck(neg));
-%     ck(abs(ck)<thresh) = 0; % remove sub-threshold values
-%     ck(ck>0) = 1/sum(sum(ck>0)); % normalise kernel values
-%     ck(ck<0) = -1/sum(sum(ck<0));
     
     rkern(:,:,i) = ck;
 end
 
+% if a kernel struct (cf. array) was given as input, return a kernel struct
+% this means computing a new centroid
 if exist('kernstr','var')
     mult = szfac([2 1])./[size(kern,2),size(kern,1)];
     rkern = struct('k',rkern,'cent',1+mult.*(kernstr.cent-1));

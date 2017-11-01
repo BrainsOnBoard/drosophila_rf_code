@@ -1,5 +1,6 @@
 function showkernels(kerns,cents,kalpha,xrng,yrng)
 % function showkernels(kerns,cents,kalpha)
+
     if nargin < 3 || isempty(kalpha)
         kalpha = 0.25;
     end

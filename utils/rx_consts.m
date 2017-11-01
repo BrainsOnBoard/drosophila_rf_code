@@ -1,3 +1,5 @@
+%% constants used throughout simulations
+
 % read the "arenas" (worlds) on which to run the simulations from the file
 % wharenas.txt
 fid = fopen('wharenas.txt','r');

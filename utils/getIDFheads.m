@@ -1,5 +1,5 @@
 function [heads,veclens,idfim,mx,my]=getIDFheads(xg,yg,idf)
-%function heads=getIDFheads(xg,yg,idf)
+% get headings from an IDF (using the gradient)
 
 if size(idf,2)>1
     [heads2d,veclens2d] = deal(NaN(sqrt(size(idf,1)),size(idf,2)));

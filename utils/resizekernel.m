@@ -1,5 +1,6 @@
 function rkern = resizekernel(kern,szfac,thresh)
-% function rkern = resizekernel(kern,szfac,thresh)
+% use the _nothresh version of this function
+
 if isstruct(kern)
     if length(kern)==1
         kernstr = kern;

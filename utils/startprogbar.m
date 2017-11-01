@@ -1,5 +1,6 @@
 function startprogbar(cntint,lpsz,waitbarstr,clonly)
-% function startprogbar(cntint,lpsz)
+% start a new progress bar
+
 global PB_LOOP PB_INT PB_COUNT PB_WB_H PB_WB_STR
 PB_LOOP = lpsz;
 PB_INT = cntint;
