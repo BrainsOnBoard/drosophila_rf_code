@@ -21,7 +21,7 @@ function rx_fig_methods_panorama_r2(dosave)
     
     load('vf_kernels_nothresh.mat','vf_avkernels_r2','neuroncolormap');
     kerns = vf_avkernels_r2;
-    load('nest1.mat','X','Y','Z');
+    load('XYZ_nid1_training.mat','X','Y','Z');
     pano = getviewfast_20140312(x,y,0,th,X(1:end-2,:),Y(1:end-2,:),Z(1:end-2,:),[],elmax);
     pixup = round(size(pano,1)*(elup/elmax));
     pano = [pano(pixup+1:end,:);false(pixup,size(pano,2))];
