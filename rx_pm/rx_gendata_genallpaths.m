@@ -2,12 +2,19 @@ function rx_gendata_genallpaths
 % this function generates data with the same parameters as
 % sub_rx_pm_newpath.sh (or ought to, anyway)
 
-viewtypes = {'hires','lores','R2nt','R4nt','Rxnt'};
-npaths = 25;
-nstartpos = 90;
-
+% common constants
 rx_consts;
 
+% types of view to run simulations on
+viewtypes = {'hires','lores','R2nt','R4nt','Rxnt'};
+
+% number of simulations at each starting position
+npaths = 25;
+
+% number of starting positions
+nstartpos = pm.nstartpos;
+
+%% run simulations
 for i = 1:length(fnames)
     for j = 1:length(viewtypes)
         for k = 1:nstartpos
