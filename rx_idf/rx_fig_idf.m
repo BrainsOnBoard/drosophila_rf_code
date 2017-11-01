@@ -167,14 +167,14 @@ for i = 1:length(fnames)
 
             contourf(mxh,myh,cidf);
 
-%             maxr = max(xg)+dgap;
-%             [perimth,perimr] = cart2pol(cpx,cpy);
-%             [cpx,cpy] = pol2cart(perimth,min(maxr,perimr));
-%             line([cpx;cpx(1)],[cpy;cpy(1)],'Color','r')
-% 
+            maxr = max(xg)+dgap;
+            [perimth,perimr] = cart2pol(cpx,cpy);
+            [cpx,cpy] = pol2cart(perimth,min(maxr,perimr));
+            line([cpx;cpx(1)],[cpy;cpy(1)],'Color','r')
+
+%             % show unwrapped world around edge
 %             [cx,cy] = pol2cart(linspace(0,2*pi,1000),maxr);
 %             line(cx,cy,'Color','k');
-% 
 %             alfill(px,py,'b','EdgeColor','b')
 
             if ~doplotallrots
