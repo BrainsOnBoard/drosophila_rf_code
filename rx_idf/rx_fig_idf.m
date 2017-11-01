@@ -5,8 +5,6 @@ function rx_fig_idf(dosave)
 if ~nargin
     dosave = false;
 end
-do120 = true;
-z120 = 0;
 
 doplotallrots = false;
 nrots = 16;
@@ -17,19 +15,12 @@ doprogbar = true;
 doload = true;
 panoht = 2;
 
+% common constants
 rx_consts;
+
+% convert distances to cm
 d = 100*d;
 
-if do120
-    str120 = '_120';
-    if z120 > 0
-        str120 = sprintf('%s_z%f',z120);
-    end
-else
-    str120 = '';
-end
-
-% fnames = {'nest1'};
 viewtypes = { 'hires', 'lores', 'R2nt', 'R4nt', 'Rxnt' };
 % viewtypes = { 'R2nt', 'R4nt', 'Rxnt' };
 
@@ -50,7 +41,7 @@ for i = 1:length(fnames)
         alsubplot(length(viewtypes),arenasperfig,1,1)
     end
     
-    [lr_views,superlr_views,kviews,rkernnum,kviews_nothresh,xg,yg] = rx_gendata_getviews(fnames{i},false,do120);
+    [lr_views,superlr_views,kviews,rkernnum,kviews_nothresh,xg,yg] = rx_gendata_getviews(fnames{i},false);
 
     xg = xg*100; % convert to cm
     yg = yg*100;
@@ -70,7 +61,7 @@ for i = 1:length(fnames)
         if ~exist(dname,'dir')
             mkdir(dname)
         end
-        figdatafn = fullfile(dname,sprintf('%s_%s%s.mat',fnames{i},viewtypes{j},str120));
+        figdatafn = fullfile(dname,sprintf('%s_%s.mat',fnames{i},viewtypes{j}));
         
         if doload && exist(figdatafn,'file')
             disp([fnames{i} ' - ' viewtypes{j}])
@@ -221,5 +212,3 @@ for i = 1:length(fnames)
         end
     end
 end
-
-

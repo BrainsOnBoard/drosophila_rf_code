@@ -1,11 +1,10 @@
-function rx_pm_gensnaps(fname)
+function rx_gendata_gensnaps(fname)
     dodebug = false;
     dokernels = false;
     dokernelsnt = false;
     dolores = false;
     
-    do120 = true;
-
+    % common constants
     rx_consts;
     
     if nargin
@@ -16,7 +15,7 @@ function rx_pm_gensnaps(fname)
         [rkerns,rkernnum] = rx_gendata_rx_kerns;
     end
     if dokernelsnt
-        [rkernsnt,rkernnum] = rx_gendata_rx_kerns_nothresh(do120,rkernsz);
+        [rkernsnt,rkernnum] = rx_gendata_rx_kerns_nothresh(rkernsz);
     end
     
     xyjump = 4*pm.reflen/pm.nsnaps;
