@@ -2,7 +2,7 @@ function rx_gendata_world2drum
 % wraps the real mapped world onto the inside of a drum
 
     rmax = 500;
-    dname = [mfiledir '/../data/arenas'];
+    dname = [mfiledir '/../../data/arenas'];
 
     rx_consts;
     for i = 1 %:2

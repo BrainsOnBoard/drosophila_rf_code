@@ -54,7 +54,7 @@ for i = 1:length(fnames)
 %     [px,py] = rx_unwrapworld(fnames{i+(i==2)},d,panoht);
     for j = 1:length(viewtypes)
         % make dir if it doesn't exist
-        dname = fullfile(mfiledir,'../data/figpreprocess/idfs');
+        dname = fullfile(mfiledir,'../../data/figpreprocess/idfs');
         if ~exist(dname,'dir')
             mkdir(dname)
         end

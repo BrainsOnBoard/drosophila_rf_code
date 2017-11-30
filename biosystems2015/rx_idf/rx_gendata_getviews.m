@@ -11,7 +11,7 @@ lrimsz = [120 360];
 rkernsz = [120 270];
 elmax = 90;
 
-dname = fullfile(mfiledir,'../data/rx_neurons/views');
+dname = fullfile(mfiledir,'../../data/rx_neurons/views');
 fname = fullfile(dname,sprintf('rx_views_%s.mat',origfname));
 if exist(fname,'file')
     load(fname); %#ok<LOAD>

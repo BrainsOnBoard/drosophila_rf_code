@@ -11,7 +11,7 @@ end
 
 function writekerns(str,ks,cm)
     ks = kstr2k(ks);
-    dname = fullfile(mfiledir,'../figures/rx_threshkerns');
+    dname = fullfile(mfiledir,'../../figures/rx_threshkerns');
     if ~exist(dname,'dir')
         mkdir(dname)
     end

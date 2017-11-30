@@ -25,7 +25,7 @@ avkern = avkerns(cell2mat({avkerns.glomnum})==glomnum & ...
                  cell2mat({avkerns.isleft})==isleft);
 
 % RF image
-dname = fullfile(mfiledir,'../data/receptive_fields_pics');
+dname = fullfile(mfiledir,'../../data/receptive_fields_pics');
 if strcmp(type,'r2')
     kernfn = fullfile(dname,sprintf('g%02df%d.jpg',glomnum,flynum(1)));
 else

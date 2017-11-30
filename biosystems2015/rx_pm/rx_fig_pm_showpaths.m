@@ -7,7 +7,7 @@ end
 
 picwd = 3; % cm
 picdpi = 600;
-picdir = [mfiledir '/../figures/rx_pm/pathpics'];
+picdir = [mfiledir '/../../figures/rx_pm/pathpics'];
 
 if ~exist(picdir,'dir')
     mkdir(picdir)
@@ -29,7 +29,7 @@ dcm = 100*d;
 xyt = [-6 0 6];
 xyl = (panoht+(dcm/2))*[-1 1];
 
-dname = fullfile(mfiledir,'../data/rx_neurons/paths');
+dname = fullfile(mfiledir,'../../data/rx_neurons/paths');
 
 shortestpath = pm.startrad-pm.coold/2;
 
@@ -38,11 +38,11 @@ shortestpath = pm.startrad-pm.coold/2;
 cmperin = 2.54;
 rtnviews = round(picwd*picdpi/cmperin);
 
-snd = [mfiledir '/../data/rx_neurons/snaps/'];
+snd = [mfiledir '/../../data/rx_neurons/snaps/'];
 dfiles = dir(fullfile(snd,'*.mat'));
 load(fullfile(snd,dfiles(1).name),'snx','sny');
 imvals = linspace(-dcm/2,dcm/2,rtnviews);
-figdname = fullfile(mfiledir,'../data/figpreprocess/paths');
+figdname = fullfile(mfiledir,'../../data/figpreprocess/paths');
 if ~exist(figdname,'dir')
     mkdir(figdname)
 end

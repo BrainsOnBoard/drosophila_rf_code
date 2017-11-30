@@ -40,7 +40,7 @@ try
     load(arenafname,'X','Y','Z');
     
     % load snapshots (and views for starting positions)
-    load(sprintf('%s/../data/rx_neurons/snaps/rx_pm_snaps_%s_%s.mat',mfiledir,viewtype,arenafname));
+    load(sprintf('%s/../../data/rx_neurons/snaps/rx_pm_snaps_%s_%s.mat',mfiledir,viewtype,arenafname));
     
     % image size depends on view type
     iskernel = viewtype(1)=='R';
@@ -87,7 +87,7 @@ try
     flyy(1,:) = sty(startposi);
     flyth(1,:) = 0;
     
-    dname = fullfile(mfiledir,'../data/rx_neurons/paths');
+    dname = fullfile(mfiledir,'../../data/rx_neurons/paths');
     if ~exist(dname,'dir')
         mkdir(dname)
     end

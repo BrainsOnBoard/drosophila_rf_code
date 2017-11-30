@@ -29,7 +29,7 @@ snth = atan2(-sny,-snx);
 thjump = 2*pi/pm.nstartpos;
 [startx,starty] = pol2cart(0:thjump:2*pi-thjump,pm.startrad);
 
-dname = fullfile(mfiledir,'../data/arenas'); % arena directory
+dname = fullfile(mfiledir,'../../data/arenas'); % arena directory
 
 imrot = 2*(0:359); % "rotations" of images (left/right circshift)
 xoff = (360-rkernsz(2))/2; % x offset, accounting for FOV
@@ -132,7 +132,7 @@ if size(startims,2)==1 % kernels
     snaps = normalizevals(snaps);
 end
 
-dname = fullfile(mfiledir,'../data/rx_neurons/snaps');
+dname = fullfile(mfiledir,'../../data/rx_neurons/snaps');
 if ~exist(dname,'dir')
     mkdir(dname)
 end

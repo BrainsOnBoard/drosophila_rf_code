@@ -1,7 +1,7 @@
 function [rkerns,rkernnum] = rx_gendata_rx_kerns_nothresh(myrkernsz)
 % returns the set of Rx kernels; if they don't exist they are generated
 
-fname = fullfile(mfiledir,'../data/rx_neurons/rx_idf_kerns_nothresh.mat');
+fname = fullfile(mfiledir,'../../data/rx_neurons/rx_idf_kerns_nothresh.mat');
 
 if exist(fname,'file')
     load(fname);

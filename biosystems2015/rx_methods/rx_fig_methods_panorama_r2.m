@@ -54,7 +54,7 @@ function rx_fig_methods_panorama_r2(dosave)
     imshow(comboim)
     
     if dosave
-        dname = fullfile(mfiledir,'../figures/rx_methods');
+        dname = fullfile(mfiledir,'../../figures/rx_methods');
 
         % if and only if we're saving the figure, also draw crosses/lines
         % and save this part separately
