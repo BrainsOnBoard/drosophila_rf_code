@@ -60,7 +60,7 @@ dosavepreprocess = doloadpreprocess;
 
 figsz = [20 10];
 docombine = isempty(whcvar);
-dname = fullfile(mfiledir,'../../data');
+dname = fullfile(mfiledir,'../../data/figpreprocess');
 prefix = ['ellblob_' netsuffixes{whnet}];
 ptrain = 0.4;
 
@@ -103,7 +103,7 @@ fname_ellblob = d(1).name;
 if nargin >= 9
     load(fullfile(dname,loadfn));
 else
-    fname_preprocess = fullfile(dname,'figpreprocess',sprintf('fig_%s_td%s_%s%s.mat',matfileremext(fname_ellblob),tdtfstr,prefix,paramstr));
+    fname_preprocess = fullfile(dname,sprintf('fig_%s_td%s_%s%s.mat',matfileremext(fname_ellblob),tdtfstr,prefix,paramstr));
     fexist = exist(fname_preprocess,'file');
     if doloadpreprocess && fexist
         fprintf('loading fig data from previous run (%s)\n',fname_preprocess);
