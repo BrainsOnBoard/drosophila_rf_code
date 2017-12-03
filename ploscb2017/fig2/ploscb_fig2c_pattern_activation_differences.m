@@ -1,4 +1,4 @@
-function samediffpatts(dosave)
+function ploscb_fig2c_pattern_activation_differences(dosave)
 if ~nargin
     dosave = false;
 end

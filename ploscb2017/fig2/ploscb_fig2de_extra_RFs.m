@@ -1,4 +1,4 @@
-function prbump(dosave)
+function ploscb_fig2de_extra_RFs(dosave)
 if ~nargin
     dosave = false;
 end

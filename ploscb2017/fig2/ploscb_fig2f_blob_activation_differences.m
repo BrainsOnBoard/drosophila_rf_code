@@ -1,4 +1,4 @@
-function findcompattern(gennew,dosave)
+function ploscb_fig2f_blob_activation_differences(gennew,dosave)
     if nargin < 1
         gennew = false;
     end

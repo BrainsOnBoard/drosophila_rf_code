@@ -1,4 +1,4 @@
-function singleRF(dosave)
+function ploscb_fig2ab_singleRF(dosave)
 if ~nargin
     dosave = false;
 end
