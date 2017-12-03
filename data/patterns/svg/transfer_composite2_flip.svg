@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="360"
+   height="120"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="transfer_composite2.svg"
+   inkscape:export-filename="/home/alex/Desktop/sync/code+data/drosophila neurons/dispatchrecap/antoinestim/new/composite2_com.png"
+   inkscape:export-xdpi="84"
+   inkscape:export-ydpi="84">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="204.34173"
+     inkscape:cy="132.31723"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1280"
+     inkscape:window-height="979"
+     inkscape:window-x="0"
+     inkscape:window-y="21"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3136"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-932.36218)">
+    <g
+       transform="matrix(1,0,0,-1,-91.695961,2029.7244)"
+       id="g3101">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:none"
+         id="rect3103"
+         width="8"
+         x="87.695961"
+         y="1022.3622"
+         height="10" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:none"
+         id="rect3105"
+         width="35"
+         x="74.195961"
+         y="1042.3622"
+         height="10" />
+    </g>
+    <g
+       id="g3097"
+       transform="matrix(1,0,0,-1,88.304039,2029.7244)">
+      <rect
+         height="10"
+         y="1022.3622"
+         x="87.695961"
+         width="8"
+         id="rect3075"
+         style="fill:#000000;fill-opacity:1;stroke:none" />
+      <rect
+         height="10"
+         y="1042.3622"
+         x="74.195961"
+         width="35"
+         id="rect3083"
+         style="fill:#000000;fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3107"
+       transform="matrix(1,0,0,-1,268.30404,2029.7244)">
+      <rect
+         height="10"
+         y="1022.3622"
+         x="87.695961"
+         width="8"
+         id="rect3109"
+         style="fill:#000000;fill-opacity:1;stroke:none" />
+      <rect
+         height="10"
+         y="1042.3622"
+         x="74.195961"
+         width="35"
+         id="rect3111"
+         style="fill:#000000;fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       id="g3113"
+       transform="translate(-1.695961,-45.000003)">
+      <rect
+         height="10"
+         y="1022.3622"
+         x="87.695961"
+         width="8"
+         id="rect3115"
+         style="fill:#000000;fill-opacity:1;stroke:none" />
+      <rect
+         height="10"
+         y="1042.3622"
+         x="74.195961"
+         width="35"
+         id="rect3117"
+         style="fill:#000000;fill-opacity:1;stroke:none" />
+    </g>
+    <g
+       transform="translate(178.30404,-45.000003)"
+       id="g3119">
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:none"
+         id="rect3121"
+         width="8"
+         x="87.695961"
+         y="1022.3622"
+         height="10" />
+      <rect
+         style="fill:#000000;fill-opacity:1;stroke:none"
+         id="rect3123"
+         width="35"
+         x="74.195961"
+         y="1042.3622"
+         height="10" />
+    </g>
+  </g>
+</svg>
