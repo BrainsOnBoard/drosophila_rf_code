@@ -1,6 +1,4 @@
-%% SET PARAMETERS
-
-function barfix(dosave)
+function ploscb_fig1d_bar_quiver(dosave)
 if ~nargin
     dosave = false;
 end

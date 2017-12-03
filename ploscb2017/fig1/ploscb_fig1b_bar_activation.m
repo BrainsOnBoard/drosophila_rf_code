@@ -1,6 +1,8 @@
-clear
+function ploscb_fig1b_bar_activation(dosave)
+if ~nargin
+    dosave = false;
+end
 
-dosave = true;
 imx = linspace(-180,180,360)';
 ksz = [120 270];
 imwds = [130 230];

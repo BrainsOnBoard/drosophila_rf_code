@@ -1,4 +1,4 @@
-function patt_act20150731(dosave)
+function ploscb_fig1fg_triangle_activation(dosave)
 if ~nargin
     dosave = false;
 end

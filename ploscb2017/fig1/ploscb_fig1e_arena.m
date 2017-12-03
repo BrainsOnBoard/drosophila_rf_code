@@ -1,4 +1,4 @@
-function fig_RFintensitymap_3d_new
+function ploscb_fig1e_arena
     r2_or_r4 = 'r4';
     glomnum = 6;
 
