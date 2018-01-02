@@ -1,4 +1,4 @@
-function barpanoconv_pic(dosave)
+function ploscb_fig5_trees(dosave)
 if ~nargin
     dosave=false;
 end
@@ -10,7 +10,7 @@ fov = 270;
 
 dosavefigdat = true;
 
-datadir = fullfile(mfiledir,'../drosodata/barextra');
+datadir = fullfile(mfiledir,'../../data/figpreprocess/barextra');
 if ~exist(datadir,'dir')
     mkdir(datadir);
 end
@@ -34,15 +34,13 @@ for i = 1:length(imfns)
         rkerns_r4 = resizekernel(vf_avkernels_r4,ksz,thresh);
         
         disp('R4')
-        [vals_r4,ths] = panoconv_all(im,rkerns_r4,fov);
+        [vals_r4,ths] = panoconv(im,rkerns_r4,fov);
         disp('.')
         
         if dosavefigdat
             save(datafn{i},'vals_*','ths');
         end
     end
-    
-    %% endhash
 end
 
 mvals = cell(1,length(imfns));
@@ -84,17 +82,12 @@ end
 legend({'Left RFs', 'Right RFs', 'Mean'},'Location','SouthEast')
 
 if dosave
-    %savefig('vw_barpic',[20 15]);
-    
-    figi = 1;
-    while true
-        fname = sprintf('figures/barextra/%04d_vw_barpic.svg',figi);
-        if ~exist(fname,'file')
-            break
-        end
-        figi = figi+1;
+    figdir = fullfile(mfiledir,'../../figures');
+    if ~exist(figdir,'dir')
+        mkdir(figdir)
     end
     
+    fname = fullfile(figdir,[mfilename '.svg']);
     fprintf('Saving to %s...\n',fname);
     saveas(gcf,fname);
 end

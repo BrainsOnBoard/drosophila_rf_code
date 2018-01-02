@@ -1,5 +1,5 @@
 function [acts,angs]=panoconv_all(im,rkerns,fov,nangs)
-if nargin < 3;
+if nargin < 3
     fov = 360;
 end
 if nargin < 4
