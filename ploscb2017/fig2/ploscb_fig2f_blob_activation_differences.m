@@ -1,8 +1,8 @@
-function ploscb_fig2f_blob_activation_differences(gennew,dosave)
-    if nargin < 1
+function ploscb_fig2f_blob_activation_differences(dosave,gennew)
+    if nargin < 2
         gennew = false;
     end
-    if nargin < 2
+    if nargin < 1
         dosave = false;
     end
     
