@@ -9,6 +9,11 @@ function ploscb_fig2f_blob_activation_differences(dosave,gennew)
     simblobs = [false true];
     separatefigs = false;
     
+    figdir = fullfile(mfiledir,'../../figures/ploscb2017/fig2');
+    if dosave && ~exist(figdir,'dir')
+        mkdir(figdir);
+    end
+    
     blobalpha = 0.5;
 
     fov = [120 270];
@@ -106,8 +111,8 @@ function ploscb_fig2f_blob_activation_differences(dosave,gennew)
             set(gca,'XTick',xticks,'YTick',yticks)
             colormap gray
             if dosave
-                imwrite(blob1,sprintf('%s/figures/%s_blob1_%03d.png', ...
-                        mfiledir,simtxt,cfilenum));
+                imwrite(blob1,fullfile(figdir,sprintf('%s_blob1_%03d.png', ...
+                        simtxt,cfilenum)));
             end
 
             figure(csimblobs*3+2);clf
@@ -119,8 +124,8 @@ function ploscb_fig2f_blob_activation_differences(dosave,gennew)
             xlim(xl)
             set(gca,'XTick',xticks,'YTick',yticks)
             if dosave
-                imwrite(blob2,sprintf('%s/figures/%s_blob2_%03d.png', ...
-                        mfiledir,simtxt,cfilenum));
+                imwrite(blob2,fullfile(figdir,sprintf('%s_blob2_%03d.png', ...
+                        simtxt,cfilenum)));
             end
 
             figure(csimblobs*3+3);clf
@@ -177,12 +182,11 @@ function ploscb_fig2f_blob_activation_differences(dosave,gennew)
         fprintf('simapp: %f\ndiffapp: %f\n',simappd,diffappd)
         
         if dosave
-            imdir = fullfile(mfiledir,'../../figures/drosneur/simdiff');
-            imwrite(blobs(:,:,:,1),fullfile(imdir,'simdiff_blob_simapp.png'))
+            imwrite(blobs(:,:,:,1),fullfile(figdir,'blobs_look_similar.png'));
         end
         
         if dosave
-            imwrite(blobs(:,:,:,2),fullfile(imdir,'simdiff_blob_diffapp.png'));
+            imwrite(blobs(:,:,:,2),fullfile(figdir,'blobs_look_different.png'));
         end
     end
     
