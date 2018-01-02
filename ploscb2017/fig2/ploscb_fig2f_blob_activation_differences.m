@@ -19,9 +19,6 @@ function ploscb_fig2f_blob_activation_differences(dosave,gennew)
     kerns = vf_avkernels_r2;
     ks = cell2mat(shiftdim({kerns.k},-1));
     imsz = [size(ks,1),size(ks,2)];
-%     bigimsz = 10*imsz;
-%     blobimsz = [imsz(1), imsz(2)*(360/fov(2))];
-%     xoff = (blobimsz(2)-imsz(2))/2;
 
     for i = 1:length(kerns)
         ck = ks(:,:,i);
@@ -68,24 +65,14 @@ function ploscb_fig2f_blob_activation_differences(dosave,gennew)
             opts = optimset('fminsearch');
             [opts.MaxIter,opts.MaxFunEvals] = deal('5000*numberofvariables');
             x0 = rand(6+6*nwave,1);
-            [xout,fval] = fminsearch(@errfunc,x0)
+            [xout,fval] = fminsearch(@errfunc,x0);
             save(datafn,'xout','fval');
         end
 
-        [~,evact,evparam] = errfunc(xout);
-
         bparam1 = xout(1:length(xout)/2);
-    %     bparam1(1) = bparam1(1)*10;
         [bacts1(:,csimblobs+1),blob1] = blobacts(bparam1,0);
         bparam2 = xout(length(xout)/2+1:end);
         [bacts2(:,csimblobs+1),blob2] = blobacts(bparam2,~csimblobs*comdiff);
-
-    %     blob1 = makeblob(bparam1,0,imsz);
-    %     blob2 = makeblob(bparam2,~simblobs*comdiff,imsz);
-
-    %         save(datafn,'xout','fval','evact','evparam','blob1','blob2', ...
-    %                     'bacts1','bacts2','bparam1','bparam2');
-    %     end
 
         y = linspace(-fov(1)/2,fov(1)/2,imsz(1));
         x = linspace(-fov(2)/2,fov(2)/2,imsz(2));
@@ -96,9 +83,6 @@ function ploscb_fig2f_blob_activation_differences(dosave,gennew)
         blob2(blob2==1) = NaN;
         blob2 = repmat(blob2,[1 1 3]);
         blob2(:,:,2) = 1-blob2(:,:,2);
-    %     blob2 = repmat(blob2,[1 1 3]);
-    %     blob2(:,:,4) = blobalpha*~blob2(:,:,1);
-    %     blob2(:,:,[1 3]) = false;
 
         if csimblobs
             simtxt = 'sim';
@@ -160,52 +144,15 @@ function ploscb_fig2f_blob_activation_differences(dosave,gennew)
             text(length(kerns)+0.5,0.9,sprintf('mean difference = %.1f%%',100*rdiff), ...
                  'HorizontalAlignment','right','VerticalAlignment','top');
         else
-%             figure(csimblobs+1);clf
-%             
-%             subplot(3,1,1);
             blobs(:,:,:,1+csimblobs) = imagealpha(blob1,blobalpha,blob2,blobalpha);
-%             image(x,y,blobs);
-%             axis equal
-%             xlim(xl)
-%             ylim(yl)
-%             set(gca,'XTick',xticks,'YTick',yticks)
 
             c1 = 1-blobalpha*(1-[0 0 0]);
             c2 = 1-blobalpha*(1-[0 1 0]);
-%             lefts = cell2mat({kerns.isleft});
-%             
-%             xlabs = cell(size(kerns));
-%             for i = 1:length(kerns)
-%                 if kerns(i).isleft
-%                     xlabs{i} = sprintf('L%d',kerns(i).glomnum);
-%                 else
-%                     xlabs{i} = sprintf('R%d',kerns(i).glomnum);
-%                 end
-%             end
-%             
-%             subplot(3,1,2);
-%             h=bar([bacts1(lefts), bacts2(lefts)]);
-%             set(h(1),'FaceColor',c1);
-%             set(h(2),'FaceColor',c2);
-%             ylim([-1 1]);
-%             set(gca,'XTick',1:sum(lefts),'XTickLabel',xlabs(lefts));
-%             rdiff = getRMSdiff(bacts1,bacts2);
-%             text(sum(lefts)+0.5,0.9,sprintf('mean difference = %.1f%%',100*rdiff), ...
-%                  'HorizontalAlignment','right','VerticalAlignment','top');
-%              
-%             subplot(3,1,3);
-%             h=bar([bacts1(~lefts), bacts2(~lefts)]);
-%             set(h(1),'FaceColor',c1);
-%             set(h(2),'FaceColor',c2);
-%             ylim([-1 1]);
-%             set(gca,'XTick',1:sum(~lefts),'XTickLabel',xlabs(~lefts));
         end
 
         if dosave
             if separatefigs
                 alsavefig(sprintf('%s_fcp_%03d',simtxt,cfilenum),[20 14]);
-%             else
-%                 alsavefig(sprintf('%s_fcp_%03d',simtxt,cfilenum),[20 10]);
             end
         end
     end
@@ -229,23 +176,15 @@ function ploscb_fig2f_blob_activation_differences(dosave,gennew)
         end
         fprintf('simapp: %f\ndiffapp: %f\n',simappd,diffappd)
         
-%         figure(1);clf
-%         image(x,y,blobs(:,:,:,1))
-%         axis equal off
         if dosave
             imdir = fullfile(mfiledir,'../../figures/drosneur/simdiff');
             imwrite(blobs(:,:,:,1),fullfile(imdir,'simdiff_blob_simapp.png'))
         end
         
-%         figure(2);clf
-%         image(x,y,blobs(:,:,:,2))
-%         axis equal off
         if dosave
             imwrite(blobs(:,:,:,2),fullfile(imdir,'simdiff_blob_diffapp.png'));
         end
     end
-
-%     dump2base(true)
     
     function [errval,evact,evparam]=errfunc(params)
         vcomoff2 = ~csimblobs*comdiff;
@@ -253,16 +192,12 @@ function ploscb_fig2f_blob_activation_differences(dosave,gennew)
         [acts2,im2] = blobacts(params(length(params)/2+1:end),vcomoff2);
         evact = mean(abs((acts1-acts2)/2));
 
-%         evim  = mean(abs(im1(:)-im2(:)));
         evparam = mean(abs(params(1:length(params)/2)-params(length(params)/2+1:end)));
-%         evparam = getRMSdiff(im1,circshift(im2,round(vcomoff2)));
-%         disp(evact)
+
         errval = evparam/evact;
         if ~csimblobs
             errval = 1/errval;
         end
-%         disp(errval);
-%         disp(params)
     end
 
     function [acts,im]=blobacts(b_x,vcomoff)
@@ -276,12 +211,7 @@ function ploscb_fig2f_blob_activation_differences(dosave,gennew)
         b_param = b_x(1:3);
         b_wparam = b_x(3+(1:nwave*3));
         b_wparam = reshape(b_wparam,length(b_wparam)/nwave,nwave);
-%         for w = 1:size(b_wparam,2)
-%             b_wparam(:,w) = max(mins(3+w),min(maxes(3+w), ...
-%                                 b_x(3+(w-1)*nwave+(1:nwave))));
-% %             b_wparam(:,w) = b_x(3+(w-1)*nwave+(1:nwave));
-%         end
-        
+
         % scale,majoraxis,thoff,amp,freq,phi
         % (scale,amp,freq,phi,majoraxis,minoraxis,thoff,im_size)
         im = ellblob(b_param(1),b_wparam(1,:),b_wparam(2,:),b_wparam(3,:), ...
@@ -300,5 +230,4 @@ function ploscb_fig2f_blob_activation_differences(dosave,gennew)
 %         imshow(im)
 %         keyboard
     end
-
 end
