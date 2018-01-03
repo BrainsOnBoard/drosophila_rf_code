@@ -1,4 +1,4 @@
-function rx_fig_pm_showpaths(dosave)
+function biosys_fig4_pm_showpaths(dosave)
 % show paths for each arena/condition
 
 if ~nargin

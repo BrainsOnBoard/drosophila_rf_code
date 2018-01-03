@@ -1,4 +1,4 @@
-function rx_gendata_gensnaps(fname)
+function biosys_gendata_gensnaps(fname)
 % Generates the needed snapshots for the simulations (cross shape in centre
 % of arena). Also saves images from each of the 90 starting positions.
 
