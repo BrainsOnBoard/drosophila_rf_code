@@ -1,4 +1,4 @@
-function rx_gendata_world3
+function biosys_gendata_world3
 % generate a new artificial world (not used in paper)
 
     dosave = false;

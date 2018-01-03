@@ -53,7 +53,7 @@ try
         if iskernel
             xoff = round((360-rkernsz(2))/2);
             
-            [rkerns,rkernnum] = rx_gendata_rx_kerns_nothresh;
+            [rkerns,rkernnum] = biosys_gendata_rx_kerns_nothresh;
             switch viewtype
                 case 'R2nt'
                     rkerns = rkerns(:,:,rkernnum==2);

@@ -75,7 +75,7 @@ if ~exist('kviews_nothresh','var')
     else
         norient = 16;
         
-        [rkerns,rkernnum_nothresh] = rx_gendata_rx_kerns_nothresh(rkernsz);
+        [rkerns,rkernnum_nothresh] = biosys_gendata_rx_kerns_nothresh(rkernsz);
         
         kth = round(linspace(0,size(lr_views,2),norient+1));
         kth = kth(1:end-1);

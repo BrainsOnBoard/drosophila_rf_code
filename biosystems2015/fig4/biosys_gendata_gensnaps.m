@@ -15,7 +15,7 @@ end
 
 if dokernelsnt
     % load kernels
-    [rkernsnt,rkernnum] = rx_gendata_rx_kerns_nothresh(rkernsz);
+    [rkernsnt,rkernnum] = biosys_gendata_rx_kerns_nothresh(rkernsz);
 end
 
 % calculate x,y,theta for snapshots
