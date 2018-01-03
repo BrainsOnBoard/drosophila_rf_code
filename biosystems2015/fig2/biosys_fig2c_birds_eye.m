@@ -12,7 +12,7 @@ fn = 'nest1.mat'; % which arena
 cpoint = 1000; % points on circle
 
 % common constants
-rx_consts;
+biosys_consts;
 
 % load arena and scale to cm
 load(fn);

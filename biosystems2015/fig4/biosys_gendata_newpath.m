@@ -25,7 +25,7 @@ fprintf('jobid: %s\narena: %s\nviewtype: %s\nstart pos: %d\nwhpaths: [%d %d]\nra
     jobid,arenafname,viewtype,startposi,whpaths(1),whpaths(end),randseed);
 
 % common constants
-rx_consts;
+biosys_consts;
 
 % centre of goal
 goalx = 0;

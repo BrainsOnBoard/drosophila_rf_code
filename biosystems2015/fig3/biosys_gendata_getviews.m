@@ -4,7 +4,7 @@ if nargin < 2
 end
 
 % common constants
-rx_consts;
+biosys_consts;
 
 origimsz = [180 720];
 lrimsz = [120 360];

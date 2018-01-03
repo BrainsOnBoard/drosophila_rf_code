@@ -13,7 +13,7 @@ if ~exist(picdir,'dir')
     mkdir(picdir)
 end
 
-rx_consts;
+biosys_consts;
 
 arenasperfig = min(3,length(fnames));
 panoht = 2;

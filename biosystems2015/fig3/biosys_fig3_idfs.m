@@ -13,7 +13,7 @@ doload = true; % whether to load fig data from cache
 panoht = 2;
 
 % common constants
-rx_consts;
+biosys_consts;
 
 % convert arena diameter to cm
 d = 100*d;

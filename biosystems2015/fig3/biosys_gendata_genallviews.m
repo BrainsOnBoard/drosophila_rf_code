@@ -3,7 +3,7 @@ function biosys_gendata_genallviews
 % wharenas.txt
 
 % common constants
-rx_consts;
+biosys_consts;
 
 % generate views for each of the arenas
 for i = 1:length(fnames)

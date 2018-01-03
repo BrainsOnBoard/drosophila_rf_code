@@ -8,7 +8,7 @@ if exist(fname,'file')
 else
     disp('generating kernels')
     
-    rx_consts;
+    biosys_consts;
     if nargin
         rkernsz = myrkernsz;
     end

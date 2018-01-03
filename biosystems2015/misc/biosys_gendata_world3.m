@@ -15,7 +15,7 @@ function biosys_gendata_world3
     tussslice = 2*pi/ntuss;
     btslice = 2*pi/nbushtree;
     
-    rx_consts;
+    biosys_consts;
     
     load([mfiledir '/../../data/arenas/nest1.mat'],'X','Y');
     rho = hypot(X,Y);

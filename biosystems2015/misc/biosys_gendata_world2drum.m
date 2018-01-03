@@ -4,7 +4,7 @@ function biosys_gendata_world2drum
     rmax = 500;
     dname = [mfiledir '/../../data/arenas'];
 
-    rx_consts;
+    biosys_consts;
     for i = 1 %:2
         origfname = sprintf('XYZ_nid%d_training.mat',i);
 

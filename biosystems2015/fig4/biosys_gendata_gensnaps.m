@@ -7,7 +7,7 @@ dokernelsnt = true; % get snapshots for kernels
 dolores = true; % get snapshots for low-res images
 
 % common constants
-rx_consts;
+biosys_consts;
 
 if nargin
     fnames = { fname };

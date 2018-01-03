@@ -7,7 +7,7 @@ if ~nargin
 end
 
 % common constants
-rx_consts;
+biosys_consts;
 
 cpoint = 1000; % points on circle
 thmax = pi*4/3; % maximum angle (we're drawing the arena with a chunk missing)

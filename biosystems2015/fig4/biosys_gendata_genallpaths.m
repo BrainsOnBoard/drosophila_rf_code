@@ -3,7 +3,7 @@ function biosys_gendata_genallpaths
 % sub_rx_pm_newpath.sh (or ought to, anyway)
 
 % common constants
-rx_consts;
+biosys_consts;
 
 % types of view to run simulations on
 viewtypes = {'hires','lores','R2nt','R4nt','Rxnt'};
