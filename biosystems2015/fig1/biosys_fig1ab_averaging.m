@@ -1,4 +1,4 @@
-function rx_fig_threshedorig_indivplots(dosave)
+function biosys_fig1ab_averaging(dosave)
 if ~nargin
     dosave = false;
 end

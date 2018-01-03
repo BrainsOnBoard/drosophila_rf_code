@@ -1,4 +1,4 @@
-function rx_fig_showkerns
+function biosys_fig1c_show_averaged_rfs
 
 load('vf_kernels_nothresh')
 
