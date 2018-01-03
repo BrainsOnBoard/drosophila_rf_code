@@ -1,4 +1,4 @@
-function [lr_views,superlr_views,kviews,rkernnum,kviews_nothresh,xg,yg]=rx_gendata_getviews(origfname,dogen)
+function [lr_views,superlr_views,kviews,rkernnum,kviews_nothresh,xg,yg]=biosys_gendata_getviews(origfname,dogen)
 if nargin < 2
     dogen = true;
 end
@@ -14,7 +14,7 @@ elmax = 90;
 dname = fullfile(mfiledir,'../../data/rx_neurons/views');
 fname = fullfile(dname,sprintf('rx_views_%s.mat',origfname));
 if exist(fname,'file')
-    load(fname); %#ok<LOAD>
+    load(fname);
 elseif ~dogen
     error('%s doesn''t exist',origfname)
 else

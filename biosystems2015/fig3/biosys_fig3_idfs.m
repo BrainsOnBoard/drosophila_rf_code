@@ -1,4 +1,4 @@
-function rx_fig_idf(dosave)
+function biosys_fig3_idfs(dosave)
 % shows heat map & surf plot representing the IDF area over which
 % navigation is possible (< thresh) calculated & drawn on.
 
@@ -33,7 +33,7 @@ for i = 1:length(fnames)
     end
     
     % get views (images/RF outputs)
-    [lr_views,superlr_views,kviews,rkernnum,kviews_nothresh,xg,yg] = rx_gendata_getviews(fnames{i},false);
+    [lr_views,superlr_views,kviews,rkernnum,kviews_nothresh,xg,yg] = biosys_gendata_getviews(fnames{i},false);
 
     % convert x,y positions of views to cm
     xg = xg*100;
