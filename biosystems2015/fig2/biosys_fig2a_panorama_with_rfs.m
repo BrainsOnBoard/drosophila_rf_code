@@ -1,4 +1,4 @@
-function rx_fig_methods_panorama_r2(dosave)
+function biosys_fig2a_panorama_with_rfs(dosave)
 % shows a panoramic view with RFs overlaid
 
     if ~nargin

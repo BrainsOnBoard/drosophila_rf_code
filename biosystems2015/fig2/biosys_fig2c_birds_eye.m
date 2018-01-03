@@ -1,4 +1,4 @@
-function rx_fig_methods_nestworld(dosave)
+function biosys_fig2c_birds_eye(dosave)
 % shows a top-down view of the natural 3D world
 
 if ~nargin

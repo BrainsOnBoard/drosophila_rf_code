@@ -1,4 +1,4 @@
-function rx_fig_methods_3d_arena(dosave)
+function biosys_fig2b_3d_arena(dosave)
 % shows a 3D view of Ofstad et al.'s arena
 
 if ~nargin
