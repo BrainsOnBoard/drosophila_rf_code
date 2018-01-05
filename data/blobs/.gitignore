@@ -1,0 +1,5 @@
+# ignore newly generated blobs
+blob_*.mat
+
+# don't ignore the original ones
+!blob_*_001.mat
