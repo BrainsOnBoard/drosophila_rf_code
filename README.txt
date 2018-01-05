@@ -2,6 +2,8 @@ This repository contains the code (and required data) for two papers which looke
 
 The relevant code for generating the figures for these papers are in the biosystems2015 and ploscb2017. The utils folder contains code common to both and the data folder contains the necessary data. Note that the data for the papers is not included here, just the code.
 
+All the folders in this directory (and subfolders) need to be added to Matlab's path for the code to work.
+
 Readme files giving more detailed information are dotted around the place.
 
 [1] Dewar, Alex DM, et al. "Navigation-specific neural coding in the visual system of Drosophila." Biosystems 136 (2015): 120-127.
