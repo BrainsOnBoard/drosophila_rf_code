@@ -1,5 +1,8 @@
-This repository contains the code (and required data) for the Biosystems (2015) paper.
+This repository contains the code (and required data) for two papers which looked at Drosophila ring neuron receptive fields [1,2].
 
-Each of the rx_* folders contain functions for reproducing the figures from the paper, and for generating any data for the needed for these figures. There are other readme files dotted around the place.
+The relevant code for generating the figures for these papers are in the biosystems2015 and ploscb2017. The utils folder contains code common to both and the data folder contains the necessary data. Note that the data for the papers is not included here, just the code.
 
-Throughout, the dosave parameter for the functions gives the option of saving the generated figure to file.
+Readme files giving more detailed information are dotted around the place.
+
+[1] Dewar, Alex DM, et al. "Navigation-specific neural coding in the visual system of Drosophila." Biosystems 136 (2015): 120-127.
+[2] Dewar, Alex DM, et al. "Neural coding in the visual system of Drosophila melanogaster: How do small neural populations support visually guided behaviours?." PLoS Computational Biology 13.10 (2017): e1005735.
