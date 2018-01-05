@@ -54,7 +54,7 @@ function ploscb_fig3_pattern_activations(dosave)
             startprogbar(1,length(fname));
         end
         
-        ehf = fopen([mfiledir,'/dcp.txt'],'r');
+        ehf = fopen('drosophila_pattern_data.txt','r');
         ehcell = textscan(ehf,'%d:%s\n');
         fclose(ehf);
         eh_fig = ehcell{1};
