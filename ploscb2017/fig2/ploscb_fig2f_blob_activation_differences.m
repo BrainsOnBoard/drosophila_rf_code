@@ -14,6 +14,7 @@ function ploscb_fig2f_blob_activation_differences(dosave,gennew)
         mkdir(figdir);
     end
     
+    blobfnprefix = fullfile(mfiledir,'../../data/blobs/blob_sim');
     blobalpha = 0.5;
 
     fov = [120 270];
@@ -54,7 +55,7 @@ function ploscb_fig2f_blob_activation_differences(dosave,gennew)
     for csimblobs = simblobs
         cfilenum = 1;
         while true
-            datafn = sprintf('%s/fcp%d_%03d.mat',mfiledir,csimblobs,cfilenum);
+            datafn = sprintf('%s%d_%03d.mat',blobfnprefix,csimblobs,cfilenum);
             if ~exist(datafn,'file')
                 break;
             end
@@ -62,7 +63,7 @@ function ploscb_fig2f_blob_activation_differences(dosave,gennew)
         end
         if ~gennew && cfilenum > 1
             cfilenum = cfilenum-1;
-            datafn = sprintf('%s/fcp%d_%03d.mat',mfiledir,csimblobs,cfilenum);
+            datafn = sprintf('%s%d_%03d.mat',blobfnprefix,csimblobs,cfilenum);
             load(datafn);
         else
             disp('searching for new blob combo')
